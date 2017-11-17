@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="es">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <!-- 登录记录缓存 锁定10分钟 -->
+    <cache name="passwordRetryCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+      <!-- 授权记录缓存 锁定10分钟 -->
+    <cache name="authorizationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+        <!-- 验证记录缓存 锁定10分钟 -->
+    <cache name="authenticationCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+  <!--设 置 Session 缓存 名 字 ， 默认 就是shiro-activeSessionCache；-->
+    <cache name="shiro-activeSessionCache"
+           maxEntriesLocalHeap="2000"
+           eternal="false"
+           timeToIdleSeconds="3600"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="true">
+    </cache>
+
+</ehcache>
